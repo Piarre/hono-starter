@@ -1,22 +1,22 @@
-FROM oven/bun:latest AS base
+FROM oven/bun:latest as base
 
 WORKDIR /usr/src/install
 
-FROM base AS install
+FROM base as install
 
 COPY package.json .
 COPY bun.lockb .
 
 RUN bun install
 
-FROM base AS build
+FROM base as build
 
 COPY --from=install /usr/src/install/node_modules ./node_modules
 COPY . .
 
 RUN bun run build
 
-FROM base AS release
+FROM base as release
 
 WORKDIR /usr/src/app
 
