@@ -2,13 +2,19 @@
   "name": "hono-starter",
   "scripts": {
     "dev": "bun run --hot src/index.ts",
-    "build": "bun build src/index.ts --outdir dist"
+    "build": "bun build src/index.ts --minify --outdir dist --sourcemap --target bun",
+    "build:docker": "docker build -t logizip-api:latest .",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
+    "archiver": "^7.0.1",
+    "dockerode": "^4.0.5",
     "hono": "^4.7.2",
     "prettier": "^3.5.2"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/archiver": "^6.0.3",
+    "@types/bun": "latest",
+    "@types/dockerode": "^3.3.38"
   }
 }
