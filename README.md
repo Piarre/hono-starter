@@ -25,8 +25,8 @@ A lightweight and efficient API starter template built with [Hono](https://hono.
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
-cd hono-starter
+git clone https://github.com/Piarre/hono-starter
+cd hono-starter && rm -rf .git/
 
 # Install dependencies
 bun install
